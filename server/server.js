@@ -9,7 +9,27 @@ app.use(express.static('client'))
 
 app.get("/api/title", (req, res) =>
   // res.send({ title: "MEAN 101 from Node!" })  //use objects here NOT STRINGS 
-  res.json({ title: "MEAN 101 from Node!" })  //use objects here NOT STRINGS 
+  res.json({ title: "MEAN CHAT / Node Diggity" })  //use objects here NOT STRINGS 
+)
+
+app.get("/api/messages", (req, res) =>
+  res.json({
+    messages: [
+      {
+        author: "John",
+        content: "SAAAAAAAPPP",
+      },
+      {
+        author: "Anon",
+        content: "#whodrewthepoop",
+      },
+      {
+        author: "Scott",
+        content: "noice",
+      },
+    ],  //use objects here NOT STRINGS
+     
+  })
 )
 
 app.listen(port, () => console.log(`Listening on port: ${port}`))
