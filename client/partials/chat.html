@@ -1,7 +1,8 @@
 <h1>Welcome to the CHAT Room</h1>
 
-<form action="">
-  <input type="text" />
+<form ng-submit="sendMessage()">
+  <input type="text" ng-model="author" placeholder="Your Name" />
+  <input type="text" ng-model="content" placeholder="Your Message" />
   <input type="submit" />
 </form>
 <hr />

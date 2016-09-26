@@ -1,4 +1,5 @@
 "use strict"
+const { json } = require("body-parser")
 //pull express in
 const express = require("express")
 const mongoose = require("mongoose")
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 3000
 
 //express base directory is the ROOT, not the folder where the server is - established in package.JSON
 app.use(express.static('client'))
+app.use(json())
 
 app.get("/api/title", (req, res) =>
   // res.send({ title: "MEAN 101 from Node!" })  //use objects here NOT STRINGS 
@@ -44,7 +46,15 @@ app.get("/api/messages", (req, res, err) =>
 
   // })
 
-mongoose.promise = Promise
+app.post('/api/messages', (req, res, err) => {
+  const msg = req.body
+  Message
+    .create(msg)
+    .then(msg => res.json(msg))
+    .catch(err)
+})
+
+mongoose.Promise = Promise
 mongoose.connect(MONGODB_URL, () =>
-  app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`))
+  app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
 )
