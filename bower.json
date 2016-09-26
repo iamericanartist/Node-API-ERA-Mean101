@@ -1,0 +1,21 @@
+{
+  "name": "node-api-era-mean101",
+  "description": "Node API ERA / Exercise 01 / Mean101",
+  "main": "server/server.js",
+  "authors": [
+    "Eric Denton"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/iamericanartist/Node-API-ERA-Mean101",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "client/lib"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
